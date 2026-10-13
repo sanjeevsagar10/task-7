@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href = "style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body style="margin:0;">
+    <header id="head">
+        <h1 id="check">CHECKPOINT</h1>
+        <h2 id="track">A Personal Tracker</h2>
+        <h3 id="samptext">Small steps, Big Target</h3>
+        <button id="colorch">Change Colour</button>
+    </header>
+    
+    <div id="mission">
+        <input type="text" placeholder="Enter a task" id="taskinput">
+        <button id="addtask">+ Add Mission</button>
+    </div>
+    <div id="container">
+        <div id="totmiss" class="total">
+            <div>Total Missions<br>
+                <b id="totval" style="font-size: 24px;"></b>
+            </div>
+        </div>
+        <div id="compmiss" class="completed">
+            <div>Completed Missions<br>
+                <b id="comval" style="font-size: 24px;"></b>
+            </div>
+        </div>
+        <div id="pendmiss" class="pending">
+            <div>Pending Missions<br>
+                <b id="penval" style="font-size: 24px;"></b></div>
+    </div>
+    </div>
+    <ul id="tasklist"></ul>
+    
+    <script src="index.js"></script>
+</body>
+</html>
