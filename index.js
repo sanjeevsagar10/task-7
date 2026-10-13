@@ -14,6 +14,7 @@ let tasklist = document.getElementById("tasklist");
 
 addbutton.onclick = function(){
     let tasktext = inputbox.value;
+    tasktext=tasktext.trim();
 
     if(tasktext==""){
         return;
@@ -27,9 +28,9 @@ addbutton.onclick = function(){
     let textSpan = document.createElement("span");
     textSpan.textContent = tasktext;
 
-    let deleteBtn = document.createElement("button");
-    deleteBtn.textContent = "Delete";
-    deleteBtn.className = "deletebtn";
+    let deletebtn = document.createElement("button");
+    deletebtn.textContent = "Delete";
+    deletebtn.className = "deletebtn";
 
     checkcircle.onclick = function(){
         li.classList.toggle("done");
@@ -42,7 +43,7 @@ addbutton.onclick = function(){
         statsupdater();
     }
 
-    deleteBtn.onclick = function(){
+    deletebtn.onclick = function(){
         if(li.classList.contains("done")){
             completedmission--;
         }
@@ -52,7 +53,7 @@ addbutton.onclick = function(){
     }
     li.appendChild(checkcircle);
     li.appendChild(textSpan);
-    li.appendChild(deleteBtn);
+    li.appendChild(deletebtn);
     
     tasklist.appendChild(li);
     inputbox.value = ""; 
