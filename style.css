@@ -24,6 +24,8 @@
     background-color: aliceblue;
     position: relative;
     padding:10px;
+    animation: slideanimation 0.6s ease-out backwards;
+    animation-delay: 0.3s;
 }
 #colorch{
     position:absolute;
@@ -42,6 +44,8 @@
     margin-top: 20px;
     gap:20px;
     justify-content: space-around;
+    animation: slideanimation 0.6s ease-out backwards;
+    animation-delay: 0.6s;
 }
 #taskinput{
     width:60%;
@@ -163,4 +167,29 @@
 .done span {
     color: #16a34a;
     text-decoration: line-through;
+}
+
+@keyframes slideanimation{
+    from{ transform: translateY(40px);
+            opacity: 0;}
+    to { transform: translateY(0);
+            opacity: 1;}   
+}
+
+.total,.completed,.pending{
+    animation: slideanimation 0.6s ease-out backwards;
+}
+.total{animation-delay: 0.9s;}
+.completed{animation-delay: 1.2s;}
+.pending{animation-delay: 1.5s;}
+#tasklist{
+    min-height: 200px;
+}
+@keyframes slideIn {
+  from { transform: translateY(20px); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
+
+#tasklist li {
+  animation: slideIn 0.4s ease-out;
 }

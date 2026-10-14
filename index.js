@@ -1,7 +1,9 @@
 let totalmission =0;
 let completedmission =0;
+let pendingmission =0;
 
 function statsupdater(){
+    totalmission = tasklist.children.length;
     pendingmission = totalmission - completedmission;
 
     document.getElementById("totval").textContent = totalmission;
@@ -32,7 +34,7 @@ addbutton.onclick = function(){
     deletebtn.textContent = "Delete";
     deletebtn.className = "deletebtn";
 
-    checkcircle.onclick = function(){
+    function togglemission(){
         li.classList.toggle("done");
         if(li.classList.contains("done")){
             completedmission++;
@@ -42,12 +44,14 @@ addbutton.onclick = function(){
         }
         statsupdater();
     }
+    checkcircle.onclick = togglemission;
+    textSpan.onclick = togglemission;
 
     deletebtn.onclick = function(){
         if(li.classList.contains("done")){
             completedmission--;
         }
-        totalmission--;
+        
         li.remove();
         statsupdater();
     }
@@ -57,7 +61,6 @@ addbutton.onclick = function(){
     
     tasklist.appendChild(li);
     inputbox.value = ""; 
-    totalmission++;
     statsupdater();
 }
 
